@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		95615313295713CF00CB6046 /* GallaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95615312295713CF00CB6046 /* GallaryViewModel.swift */; };
+		956153202957148400CB6046 /* Connectivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956153182957148400CB6046 /* Connectivity.swift */; };
+		956153212957148400CB6046 /* ApiConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9561531A2957148400CB6046 /* ApiConstants.swift */; };
+		956153222957148400CB6046 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9561531B2957148400CB6046 /* ApiManager.swift */; };
+		956153232957148400CB6046 /* ErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9561531D2957148400CB6046 /* ErrorMessage.swift */; };
+		956153242957148400CB6046 /* BaseUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9561531F2957148400CB6046 /* BaseUrl.swift */; };
+		9561532629571FCF00CB6046 /* GallaryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9561532529571FCF00CB6046 /* GallaryModel.swift */; };
+		9561532A29572D4000CB6046 /* GallaryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9561532829572D4000CB6046 /* GallaryCollectionViewCell.swift */; };
+		9561532B29572D4000CB6046 /* GallaryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9561532929572D4000CB6046 /* GallaryCollectionViewCell.xib */; };
 		956C64E0295707DD00DC73AB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956C64DF295707DD00DC73AB /* AppDelegate.swift */; };
 		956C64E2295707DD00DC73AB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956C64E1295707DD00DC73AB /* SceneDelegate.swift */; };
 		956C64E4295707DD00DC73AB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956C64E3295707DD00DC73AB /* ViewController.swift */; };
@@ -19,6 +28,15 @@
 /* Begin PBXFileReference section */
 		2335C62B65EB5B18D375C289 /* Pods_imgurassignment.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_imgurassignment.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		619B1C61B11E550FCA4CCE99 /* Pods-imgurassignment.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-imgurassignment.release.xcconfig"; path = "Target Support Files/Pods-imgurassignment/Pods-imgurassignment.release.xcconfig"; sourceTree = "<group>"; };
+		95615312295713CF00CB6046 /* GallaryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GallaryViewModel.swift; sourceTree = "<group>"; };
+		956153182957148400CB6046 /* Connectivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Connectivity.swift; sourceTree = "<group>"; };
+		9561531A2957148400CB6046 /* ApiConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiConstants.swift; sourceTree = "<group>"; };
+		9561531B2957148400CB6046 /* ApiManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
+		9561531D2957148400CB6046 /* ErrorMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorMessage.swift; sourceTree = "<group>"; };
+		9561531F2957148400CB6046 /* BaseUrl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseUrl.swift; sourceTree = "<group>"; };
+		9561532529571FCF00CB6046 /* GallaryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GallaryModel.swift; sourceTree = "<group>"; };
+		9561532829572D4000CB6046 /* GallaryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GallaryCollectionViewCell.swift; sourceTree = "<group>"; };
+		9561532929572D4000CB6046 /* GallaryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GallaryCollectionViewCell.xib; sourceTree = "<group>"; };
 		956C64DC295707DD00DC73AB /* imgurassignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = imgurassignment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		956C64DF295707DD00DC73AB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		956C64E1295707DD00DC73AB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -48,7 +66,6 @@
 				E95152D7F620264FBCB2398D /* Pods-imgurassignment.debug.xcconfig */,
 				619B1C61B11E550FCA4CCE99 /* Pods-imgurassignment.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -58,6 +75,112 @@
 				2335C62B65EB5B18D375C289 /* Pods_imgurassignment.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9561530E2957134E00CB6046 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				9561530F2957134E00CB6046 /* ViewModeldel */,
+				956153102957134E00CB6046 /* Model */,
+				956153112957134E00CB6046 /* View */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		9561530F2957134E00CB6046 /* ViewModeldel */ = {
+			isa = PBXGroup;
+			children = (
+				95615312295713CF00CB6046 /* GallaryViewModel.swift */,
+			);
+			path = ViewModeldel;
+			sourceTree = "<group>";
+		};
+		956153102957134E00CB6046 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9561532529571FCF00CB6046 /* GallaryModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		956153112957134E00CB6046 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9561532729572D0F00CB6046 /* CollectionViewCell */,
+				956C64E5295707DD00DC73AB /* Main.storyboard */,
+				956C64E3295707DD00DC73AB /* ViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		956153142957143A00CB6046 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				956C64DF295707DD00DC73AB /* AppDelegate.swift */,
+				956C64E1295707DD00DC73AB /* SceneDelegate.swift */,
+			);
+			path = Delegates;
+			sourceTree = "<group>";
+		};
+		956153152957147400CB6046 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				956153162957148400CB6046 /* Networking */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		956153162957148400CB6046 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				956153172957148400CB6046 /* Connectivity */,
+				956153192957148400CB6046 /* APIManager */,
+				9561531C2957148400CB6046 /* Error */,
+				9561531E2957148400CB6046 /* Baseurl */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		956153172957148400CB6046 /* Connectivity */ = {
+			isa = PBXGroup;
+			children = (
+				956153182957148400CB6046 /* Connectivity.swift */,
+			);
+			path = Connectivity;
+			sourceTree = "<group>";
+		};
+		956153192957148400CB6046 /* APIManager */ = {
+			isa = PBXGroup;
+			children = (
+				9561531A2957148400CB6046 /* ApiConstants.swift */,
+				9561531B2957148400CB6046 /* ApiManager.swift */,
+			);
+			path = APIManager;
+			sourceTree = "<group>";
+		};
+		9561531C2957148400CB6046 /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				9561531D2957148400CB6046 /* ErrorMessage.swift */,
+			);
+			path = Error;
+			sourceTree = "<group>";
+		};
+		9561531E2957148400CB6046 /* Baseurl */ = {
+			isa = PBXGroup;
+			children = (
+				9561531F2957148400CB6046 /* BaseUrl.swift */,
+			);
+			path = Baseurl;
+			sourceTree = "<group>";
+		};
+		9561532729572D0F00CB6046 /* CollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				9561532829572D4000CB6046 /* GallaryCollectionViewCell.swift */,
+				9561532929572D4000CB6046 /* GallaryCollectionViewCell.xib */,
+			);
+			path = CollectionViewCell;
 			sourceTree = "<group>";
 		};
 		956C64D3295707DD00DC73AB = {
@@ -81,10 +204,9 @@
 		956C64DE295707DD00DC73AB /* imgurassignment */ = {
 			isa = PBXGroup;
 			children = (
-				956C64DF295707DD00DC73AB /* AppDelegate.swift */,
-				956C64E1295707DD00DC73AB /* SceneDelegate.swift */,
-				956C64E3295707DD00DC73AB /* ViewController.swift */,
-				956C64E5295707DD00DC73AB /* Main.storyboard */,
+				956153152957147400CB6046 /* Helper */,
+				956153142957143A00CB6046 /* Delegates */,
+				9561530E2957134E00CB6046 /* Modules */,
 				956C64E8295707DF00DC73AB /* Assets.xcassets */,
 				956C64EA295707DF00DC73AB /* LaunchScreen.storyboard */,
 				956C64ED295707DF00DC73AB /* Info.plist */,
@@ -153,6 +275,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				956C64EC295707DF00DC73AB /* LaunchScreen.storyboard in Resources */,
+				9561532B29572D4000CB6046 /* GallaryCollectionViewCell.xib in Resources */,
 				956C64E9295707DF00DC73AB /* Assets.xcassets in Resources */,
 				956C64E7295707DD00DC73AB /* Main.storyboard in Resources */,
 			);
@@ -209,6 +332,14 @@
 			files = (
 				956C64E4295707DD00DC73AB /* ViewController.swift in Sources */,
 				956C64E0295707DD00DC73AB /* AppDelegate.swift in Sources */,
+				956153212957148400CB6046 /* ApiConstants.swift in Sources */,
+				956153222957148400CB6046 /* ApiManager.swift in Sources */,
+				9561532A29572D4000CB6046 /* GallaryCollectionViewCell.swift in Sources */,
+				956153242957148400CB6046 /* BaseUrl.swift in Sources */,
+				956153232957148400CB6046 /* ErrorMessage.swift in Sources */,
+				956153202957148400CB6046 /* Connectivity.swift in Sources */,
+				95615313295713CF00CB6046 /* GallaryViewModel.swift in Sources */,
+				9561532629571FCF00CB6046 /* GallaryModel.swift in Sources */,
 				956C64E2295707DD00DC73AB /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
