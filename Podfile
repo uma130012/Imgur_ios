@@ -9,5 +9,6 @@ target 'imgurassignment' do
   # Networking
     pod 'Alamofire'
     pod 'ObjectMapper'
+    pod 'SDWebImage'
 
 end
