@@ -12,5 +12,6 @@ struct API {
     static let baseUrl = BaseUrl.dev.value
     
     // MARK:-  Routes
-    static let gallary = baseUrl + "/3/gallery/search/top/week/0"
+    static let gallary = baseUrl + "/3/gallery/"
+    
 }

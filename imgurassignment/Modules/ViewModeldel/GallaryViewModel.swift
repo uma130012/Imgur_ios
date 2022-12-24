@@ -8,29 +8,44 @@
 import UIKit
 
 class GallaryViewModel: NSObject {
-
+    
+    //    MARK:- Properties
+    
     var parentVC:ViewController?
     var gallaryData:[GallaryData] = []
     
+    var changeToogle:Bool = false{
+        didSet{
+            parentVC?.toggleBtn.setTitle(changeToogle == true ? "Grid" : "List", for: .normal)
+            reloadCollectionView()
+        }
+    }
+    
+    
+    //    MARK:- Initialization
     
     init(parentVC: ViewController? = nil) {
         super.init()
         self.parentVC = parentVC
+        
+        self.parentVC?.searchBar.searchTextField.clearButtonMode = .never
+        
         registerCollectionViewCell()
-        self.gallaryAPI(query: "cats")
+
+        self.gallaryAPI()
     }
     
-
-// MARK:- Register Collectionview Cell
+    
+    // MARK:- Register Collectionview Cell
     
     private func registerCollectionViewCell(){
         parentVC?.collectionView.register(UINib(nibName: GallaryCollectionViewCell.reuseID, bundle: nil), forCellWithReuseIdentifier: GallaryCollectionViewCell.reuseID)
     }
     
-// MARK:- fetch data from imgur for gallary by optional search query
+    // MARK:- fetch data from imgur for gallary by optional search query
     
     func gallaryAPI(query:String = ""){
-        let url = query == "" ? API.gallary : API.gallary + "?q=\(query)"
+        let url = query == "" ? API.gallary + "top/week/0" : API.gallary + "search/top/week/0?q=\(query)"
         NetworkManager.hitApi(url: url,httpMethodType: .get) { [weak self] (response : GallaryModel) in
             guard let weakSelf = self else { return }
             print("response",response)
@@ -80,7 +95,12 @@ extension GallaryViewModel:UICollectionViewDelegate{
 
 extension GallaryViewModel:UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = ((self.parentVC?.collectionView.frame.size.width ?? UIScreen.main.bounds.width) - 3) / 3.0
+        var width:CGFloat = .zero
+        if changeToogle == false{
+            width = ((self.parentVC?.collectionView.frame.size.width ?? UIScreen.main.bounds.width) - 3) / 3.0
+        }else{
+            width = self.parentVC?.collectionView.frame.size.width ?? UIScreen.main.bounds.width
+        }
         return CGSize(width: width, height: width)
     }
 
@@ -95,4 +115,28 @@ extension GallaryViewModel:UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 1.5
     }
+}
+
+//MARK:- UICollectionViewDelegateFlowLayout
+extension GallaryViewModel:UISearchBarDelegate{
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        parentVC?.searchBar.showsCancelButton = searchText != ""
+        if (searchText == ""){
+            gallaryAPI()
+        }
+    }
+  
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.searchTextField.text = ""
+        searchBar.resignFirstResponder()
+        gallaryAPI()
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
+        if let text = searchBar.text,!text.isEmpty && text.count > 0{
+            gallaryAPI(query: text)
+        }
+    }
+
 }

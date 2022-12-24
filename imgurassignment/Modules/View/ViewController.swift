@@ -9,7 +9,7 @@ import UIKit
 
 class ViewController: UIViewController {
 //    MARK:- Outlets
-    
+    @IBOutlet weak var toggleBtn: UIButton!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var searchBar: UISearchBar!
     
@@ -22,12 +22,15 @@ class ViewController: UIViewController {
         self.viewModel = GallaryViewModel(parentVC: self)
         self.collectionView.delegate = viewModel
         self.collectionView.dataSource = viewModel
+        self.searchBar.delegate = viewModel
     }
     
 //    MARK:- Interface Builder
     
     @IBAction func toggleBtnTapped(_ sender: Any) {
-        
+        if let toggle = viewModel?.changeToogle{
+            viewModel?.changeToogle = !toggle
+        }
     }
     
 }

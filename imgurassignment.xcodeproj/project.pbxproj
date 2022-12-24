@@ -16,6 +16,8 @@
 		9561532629571FCF00CB6046 /* GallaryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9561532529571FCF00CB6046 /* GallaryModel.swift */; };
 		9561532A29572D4000CB6046 /* GallaryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9561532829572D4000CB6046 /* GallaryCollectionViewCell.swift */; };
 		9561532B29572D4000CB6046 /* GallaryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9561532929572D4000CB6046 /* GallaryCollectionViewCell.xib */; };
+		9561532E2957592200CB6046 /* Int+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9561532D2957592200CB6046 /* Int+Extension.swift */; };
+		956153302957599D00CB6046 /* CollectionViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9561532F2957599D00CB6046 /* CollectionViewCell+Extension.swift */; };
 		956C64E0295707DD00DC73AB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956C64DF295707DD00DC73AB /* AppDelegate.swift */; };
 		956C64E2295707DD00DC73AB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956C64E1295707DD00DC73AB /* SceneDelegate.swift */; };
 		956C64E4295707DD00DC73AB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956C64E3295707DD00DC73AB /* ViewController.swift */; };
@@ -37,6 +39,8 @@
 		9561532529571FCF00CB6046 /* GallaryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GallaryModel.swift; sourceTree = "<group>"; };
 		9561532829572D4000CB6046 /* GallaryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GallaryCollectionViewCell.swift; sourceTree = "<group>"; };
 		9561532929572D4000CB6046 /* GallaryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GallaryCollectionViewCell.xib; sourceTree = "<group>"; };
+		9561532D2957592200CB6046 /* Int+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extension.swift"; sourceTree = "<group>"; };
+		9561532F2957599D00CB6046 /* CollectionViewCell+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CollectionViewCell+Extension.swift"; sourceTree = "<group>"; };
 		956C64DC295707DD00DC73AB /* imgurassignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = imgurassignment.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		956C64DF295707DD00DC73AB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		956C64E1295707DD00DC73AB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -125,6 +129,7 @@
 		956153152957147400CB6046 /* Helper */ = {
 			isa = PBXGroup;
 			children = (
+				9561532C295758F300CB6046 /* Extension */,
 				956153162957148400CB6046 /* Networking */,
 			);
 			path = Helper;
@@ -181,6 +186,15 @@
 				9561532929572D4000CB6046 /* GallaryCollectionViewCell.xib */,
 			);
 			path = CollectionViewCell;
+			sourceTree = "<group>";
+		};
+		9561532C295758F300CB6046 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				9561532D2957592200CB6046 /* Int+Extension.swift */,
+				9561532F2957599D00CB6046 /* CollectionViewCell+Extension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		956C64D3295707DD00DC73AB = {
@@ -333,8 +347,10 @@
 				956C64E4295707DD00DC73AB /* ViewController.swift in Sources */,
 				956C64E0295707DD00DC73AB /* AppDelegate.swift in Sources */,
 				956153212957148400CB6046 /* ApiConstants.swift in Sources */,
+				956153302957599D00CB6046 /* CollectionViewCell+Extension.swift in Sources */,
 				956153222957148400CB6046 /* ApiManager.swift in Sources */,
 				9561532A29572D4000CB6046 /* GallaryCollectionViewCell.swift in Sources */,
+				9561532E2957592200CB6046 /* Int+Extension.swift in Sources */,
 				956153242957148400CB6046 /* BaseUrl.swift in Sources */,
 				956153232957148400CB6046 /* ErrorMessage.swift in Sources */,
 				956153202957148400CB6046 /* Connectivity.swift in Sources */,

@@ -37,7 +37,7 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xAh-Sf-0BY">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xAh-Sf-0BY">
                                 <rect key="frame" x="8" y="49.666666666666671" width="186" height="176.33333333333331"/>
                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
                             </imageView>
