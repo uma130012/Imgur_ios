@@ -6,5 +6,8 @@ target 'imgurassignment' do
   use_frameworks!
 
   # Pods for imgurassignment
+  # Networking
+    pod 'Alamofire'
+    pod 'ObjectMapper'
 
 end
