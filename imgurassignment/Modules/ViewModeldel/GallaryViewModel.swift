@@ -46,14 +46,20 @@ class GallaryViewModel: NSObject {
     
     func gallaryAPI(query:String = ""){
         let url = query == "" ? API.gallary + "top/week/0" : API.gallary + "search/top/week/0?q=\(query)"
+        parentVC?.collectionView.setEmptyView(title: "Data Fetching...", message: "Please wait for a while")
         NetworkManager.hitApi(url: url,httpMethodType: .get) { [weak self] (response : GallaryModel) in
             guard let weakSelf = self else { return }
-            print("response",response)
             if let data = response.gallaryData{
                 weakSelf.gallaryData = data
                 weakSelf.reloadCollectionView()
             }
+            if weakSelf.gallaryData.isEmpty{
+                weakSelf.parentVC?.collectionView.setEmptyView(title: "No Data found", message: "Please search somthing else")
+            }else{
+                weakSelf.parentVC?.collectionView.restore()
+            }
         } failure: { error in
+            self.parentVC?.collectionView.setEmptyView(title: "Whooops", message: (error as AnyObject).localizedDescription ?? "Somthing went wrong")
             print(error)
         }
     }
@@ -128,6 +134,7 @@ extension GallaryViewModel:UISearchBarDelegate{
   
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchBar.searchTextField.text = ""
+        parentVC?.searchBar.showsCancelButton = false
         searchBar.resignFirstResponder()
         gallaryAPI()
     }

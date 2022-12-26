@@ -24,6 +24,7 @@
 		956C64E7295707DD00DC73AB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 956C64E5295707DD00DC73AB /* Main.storyboard */; };
 		956C64E9295707DF00DC73AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 956C64E8295707DF00DC73AB /* Assets.xcassets */; };
 		956C64EC295707DF00DC73AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 956C64EA295707DF00DC73AB /* LaunchScreen.storyboard */; };
+		95C56B8D2959FA1000593CC7 /* CollectionViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C56B8C2959FA1000593CC7 /* CollectionViewExtension.swift */; };
 		9CE81653C7355DC7DDE7F968 /* Pods_imgurassignment.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2335C62B65EB5B18D375C289 /* Pods_imgurassignment.framework */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +50,7 @@
 		956C64E8295707DF00DC73AB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		956C64EB295707DF00DC73AB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		956C64ED295707DF00DC73AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		95C56B8C2959FA1000593CC7 /* CollectionViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewExtension.swift; sourceTree = "<group>"; };
 		E95152D7F620264FBCB2398D /* Pods-imgurassignment.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-imgurassignment.debug.xcconfig"; path = "Target Support Files/Pods-imgurassignment/Pods-imgurassignment.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -191,6 +193,7 @@
 		9561532C295758F300CB6046 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				95C56B8C2959FA1000593CC7 /* CollectionViewExtension.swift */,
 				9561532D2957592200CB6046 /* Int+Extension.swift */,
 				9561532F2957599D00CB6046 /* CollectionViewCell+Extension.swift */,
 			);
@@ -350,6 +353,7 @@
 				956153302957599D00CB6046 /* CollectionViewCell+Extension.swift in Sources */,
 				956153222957148400CB6046 /* ApiManager.swift in Sources */,
 				9561532A29572D4000CB6046 /* GallaryCollectionViewCell.swift in Sources */,
+				95C56B8D2959FA1000593CC7 /* CollectionViewExtension.swift in Sources */,
 				9561532E2957592200CB6046 /* Int+Extension.swift in Sources */,
 				956153242957148400CB6046 /* BaseUrl.swift in Sources */,
 				956153232957148400CB6046 /* ErrorMessage.swift in Sources */,
