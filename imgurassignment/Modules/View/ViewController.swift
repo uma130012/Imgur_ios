@@ -6,13 +6,14 @@
 //
 
 import UIKit
+import Kingfisher
 
 class ViewController: UIViewController {
 //    MARK:- Outlets
     @IBOutlet weak var toggleBtn: UIButton!
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var searchBar: UISearchBar!
-    
+    let cache = ImageCache.default
     
     var viewModel: GallaryViewModel?
     
@@ -23,6 +24,14 @@ class ViewController: UIViewController {
         self.collectionView.delegate = viewModel
         self.collectionView.dataSource = viewModel
         self.searchBar.delegate = viewModel
+        
+        // Check memory clean up every 30 seconds.
+        cache.memoryStorage.config.cleanInterval = 30
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        
     }
     
 //    MARK:- Interface Builder

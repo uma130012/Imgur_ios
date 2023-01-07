@@ -33,6 +33,8 @@ class GallaryData : Mappable {
     var link : String?
     var is_album : Bool?
     var images : [Images]?
+    var type : String?
+
     required init?(map: Map) {}
     
     func mapping(map: Map) {
@@ -43,6 +45,7 @@ class GallaryData : Mappable {
         datetime <- map["datetime"]
         link <- map["link"]
         is_album <- map["is_album"]
+        type <- map["type"]
         images <- map["images"]
     }
     

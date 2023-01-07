@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Kingfisher
+import AVKit
 
 class GallaryViewModel: NSObject {
     
@@ -71,6 +73,17 @@ class GallaryViewModel: NSObject {
         }
     }
     
+    private func playVideo(_ url:URL){
+        let player = AVPlayer(url: url)
+        let playerViewController = AVPlayerViewController()
+        playerViewController.player = player
+        parentVC?.present(playerViewController, animated: true) {
+            if let player = playerViewController.player{
+                player.play()
+            }
+        }
+    }
+    
 }
 
 //MARK:- UICollectionViewDataSource
@@ -82,8 +95,14 @@ extension GallaryViewModel:UICollectionViewDataSource{
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GallaryCollectionViewCell.reuseID, for: indexPath) as! GallaryCollectionViewCell
-        cell.configureCellData(data: gallaryData[indexPath.row])
+        cell.gallaryData = gallaryData[indexPath.row]
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GallaryCollectionViewCell.reuseID, for: indexPath) as! GallaryCollectionViewCell
+        // This will cancel the unfinished downloading task when the cell disappearing.
+           cell.contentImageView.kf.cancelDownloadTask()
     }
 
 }
@@ -94,6 +113,16 @@ extension GallaryViewModel:UICollectionViewDataSource{
 extension GallaryViewModel:UICollectionViewDelegate{
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print(indexPath.row)
+        let data = gallaryData[indexPath.row]
+        if data.is_album == true{
+            if let album = data.images?.first,let type = album.type, let link = album.link,let url = URL(string: link) ,type == "video/mp4" {
+                playVideo(url)
+            }
+        }else{
+            if let type = data.type,let link = data.link,let url = URL(string: link),type == "video/mp4"{
+                playVideo(url)
+            }
+        }
     }
 }
 

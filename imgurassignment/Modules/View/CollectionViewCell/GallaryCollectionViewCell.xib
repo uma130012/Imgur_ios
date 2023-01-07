@@ -37,7 +37,7 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xAh-Sf-0BY">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xAh-Sf-0BY" customClass="AnimatedImageView" customModule="Kingfisher">
                                 <rect key="frame" x="8" y="49.666666666666671" width="186" height="176.33333333333331"/>
                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
                             </imageView>
@@ -47,15 +47,21 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="play.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="dK0-sn-IfT">
+                                <rect key="frame" x="91.333333333333329" y="128.66666666666666" width="19.666666666666671" height="19.000000000000028"/>
+                                <color key="tintColor" systemColor="systemCyanColor"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="HcM-4E-dOD" secondAttribute="trailing" constant="8" id="2pR-oG-FFp"/>
                             <constraint firstAttribute="bottom" secondItem="xAh-Sf-0BY" secondAttribute="bottom" constant="8" id="3mq-4m-aHI"/>
                             <constraint firstItem="HcM-4E-dOD" firstAttribute="top" secondItem="8Be-6L-38V" secondAttribute="top" constant="8" id="5dS-Vq-sSe"/>
+                            <constraint firstItem="dK0-sn-IfT" firstAttribute="centerY" secondItem="xAh-Sf-0BY" secondAttribute="centerY" id="DO4-Ri-eHp"/>
                             <constraint firstAttribute="trailing" secondItem="xAh-Sf-0BY" secondAttribute="trailing" constant="8" id="JDI-VJ-Raq"/>
                             <constraint firstItem="xAh-Sf-0BY" firstAttribute="trailing" secondItem="Wy5-Rw-N65" secondAttribute="trailing" constant="8" id="eWd-Fg-Je8"/>
                             <constraint firstItem="xAh-Sf-0BY" firstAttribute="leading" secondItem="8Be-6L-38V" secondAttribute="leading" constant="8" id="f6Z-xJ-sUF"/>
+                            <constraint firstItem="dK0-sn-IfT" firstAttribute="centerX" secondItem="xAh-Sf-0BY" secondAttribute="centerX" id="p0j-Se-YEU"/>
                             <constraint firstItem="xAh-Sf-0BY" firstAttribute="bottom" secondItem="Wy5-Rw-N65" secondAttribute="bottom" constant="8" id="txm-5X-AFR"/>
                             <constraint firstItem="xAh-Sf-0BY" firstAttribute="top" secondItem="HcM-4E-dOD" secondAttribute="bottom" constant="8" id="uoa-ZV-jB2"/>
                             <constraint firstItem="HcM-4E-dOD" firstAttribute="leading" secondItem="8Be-6L-38V" secondAttribute="leading" constant="8" id="zAP-QY-nX3"/>
@@ -72,17 +78,22 @@
             </constraints>
             <size key="customSize" width="202" height="234"/>
             <connections>
-                <outlet property="contentImageView" destination="xAh-Sf-0BY" id="Mon-8M-RGp"/>
+                <outlet property="contentImageView" destination="xAh-Sf-0BY" id="ViZ-8f-OLA"/>
                 <outlet property="dateAndTimeLabel" destination="UXT-eF-lW2" id="1SN-O0-M2o"/>
                 <outlet property="imageCountLabel" destination="Wy5-Rw-N65" id="0ri-Tl-qvS"/>
+                <outlet property="playBtn" destination="dK0-sn-IfT" id="DKi-gu-6PW"/>
                 <outlet property="titleLabel" destination="ANd-sc-yV7" id="QLU-CN-UXv"/>
             </connections>
             <point key="canvasLocation" x="87.022900763358777" y="84.507042253521135"/>
         </collectionViewCell>
     </objects>
     <resources>
+        <image name="play.circle" catalog="system" width="128" height="123"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemCyanColor">
+            <color red="0.19607843137254902" green="0.67843137254901964" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemGray6Color">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
